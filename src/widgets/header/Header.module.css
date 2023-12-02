@@ -1,0 +1,145 @@
+.header {
+    width: 100%;
+    height: 64px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0px 4px 5px 0px #E9EDF3;
+}
+
+.header__image {
+    width: 100px;
+    height: 60px;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    justify-content: space-between; /* Add this line */
+    align-items: center; /* Add this line */
+}
+
+.date {
+    color: #899CB1;
+    margin: 21px 86px 21px 0;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148%;
+    cursor: default;
+}
+
+.calls_block {
+    display: flex;
+    align-items: center;
+    margin-right: 189px;
+    cursor: default;
+}
+
+.calls_info {
+    margin-right: 56px;
+}
+
+.calls_info:last-child {
+    margin-right: 0;
+}
+
+.calls_info p {
+    color: #122945;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148%;
+}
+
+.calls_info__text {
+    display: flex;
+    gap: 8px;
+}
+
+.calls-info p,
+span {
+    color: #00A775;
+    font-size: 14px;
+}
+
+.search_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__icon {
+    margin: 8px 56px;
+    width: 32px;
+    height: 48px;
+    color: #ADBFDF;
+    cursor: pointer;
+}
+
+.search__choose {
+    color: #899CB1;
+    display: none;
+    cursor: pointer;
+}
+
+.search__name {
+    display: flex;
+    color: #899CB1;
+    opacity: 0.85;
+    flex-direction: row;
+    text-align: right;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.avatar_container {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.user__icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.extend,
+.expand,
+.search__icon {
+    color: #adbfdf;
+}
+
+.extend:hover,
+.expand:hover,
+.search__icon:hover,
+.iconHover:hover {
+    color: #002cfb;
+}
+
+.extend:active,
+.expand:active,
+.search__icon:active,
+.iconHover:active {
+    color: #274bc8;
+}

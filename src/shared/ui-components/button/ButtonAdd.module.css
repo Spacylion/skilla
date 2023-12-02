@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.container__button {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 52px;
+    border-radius: 4px;
+    background: #005FF8;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding-right: 40px;
+    overflow: hidden;
+    margin: 64px auto 0;
+
+}
+
+.container__button:hover {
+    background: #0024CB;
+    color: white;
+}
+
+.container__button:active {
+    background: #274BC8;
+}
+
+.button__text {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.button__icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}

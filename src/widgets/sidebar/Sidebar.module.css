@@ -1,0 +1,21 @@
+.sidebar {
+    grid-row: span 2;
+    background-color: #091336;
+    height: 100vh;
+    min-width: 240px;
+    position: fixed;
+    z-index: 999;
+}
+
+.container {
+    width: 100%;
+    padding: 20px 12px 32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 109px;
+    height: auto
+}

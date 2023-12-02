@@ -1,0 +1,212 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 1440px;
+}
+
+
+.shared__settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.balance__button {
+    display: flex;
+    width: 100%;
+    max-width: 145px;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 48px;
+    background: #FFF;
+    line-height: 148%;
+
+    white-space: nowrap;
+}
+
+.balance span:hover {
+    color: #005FF8
+}
+
+
+button p {
+    color: #899CB1;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+button span {
+    color: #122945;
+    font-size: 14px;
+    font-style: normal;
+    font-family: 'SF Pro Display Medium', sans-serif;
+    font-weight: 500;
+}
+
+
+.balance_add {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/*date picker*/
+.date__picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    max-width: 115px;
+    margin-left: 48px;
+    height: 18px;
+}
+
+.date__icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #ADBFDF;
+    gap: 8px;
+}
+
+
+.date__icon p {
+
+    white-space: nowrap;
+    color: #005FF8;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.date__arrow {
+    cursor: pointer;
+}
+
+/*filters*/
+.filters, .filter_toggles {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
+    width: 120px; /* Пример фиксированной ширины */
+}
+
+
+.calls {
+    background: #FFF;
+    box-shadow: 0px 4px 5px 0px #E9EDF3;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 18px;
+    height: 21px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.close {
+    width: 15px;
+    height: 15px;
+}
+
+.balance__button,
+.balance__button:focus {
+    border: none;
+}
+
+.search_menu {
+    display: flex;
+    flex-direction: row;
+    max-width: 482px;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
+}
+
+.filter:last-child {
+    margin-right: 0;
+}
+
+.search_menu p, .filter {
+    color: #5E7793;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.filter_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 49px;
+}
+
+.search__icon {
+    color: #ADBFDF;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+.reset p {
+    line-height: 24px;
+    color: #5E7793;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.close {
+    width: 9px;
+    height: 9px;
+    margin-left: 8px;
+}
+

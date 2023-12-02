@@ -1,0 +1,220 @@
+.date__picker {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    max-width: 115px;
+    margin-left: 48px;
+    height: 18px;
+    position: relative;
+}
+
+.date__calendar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    color: #ADBFDF;
+    gap: 8px;
+}
+
+.date__calendar p {
+    white-space: nowrap;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0;
+}
+
+.date__arrow {
+    height: 10px;
+    width: auto;
+}
+
+.date__calendar p,
+.choose__item p {
+    color: #899CB1;
+}
+
+.date__calendar p:hover,
+.choose__item p:hover {
+    color: #122945;
+}
+
+.date__calendar p:active,
+.choose__item p:active {
+    color: #002CFB;
+}
+
+.date__arrow,
+.date__icon {
+    cursor: pointer;
+    margin-left: 4px;
+    color: #ADBFDF;
+}
+
+.date__arrow:hover,
+.date__icon:hover {
+    color: #002CFB;
+}
+
+.date__arrow:active,
+.date__icon:active {
+    color: #274BC8;
+}
+
+.date__calendar p,
+.choose__item p {
+    color: #899CB1;
+}
+
+.date__calendar p:hover,
+.choose__item p:hover {
+    color: #122945;
+}
+
+.date__calendar p:active,
+.choose__item p:active {
+    color: #002CFB;
+}
+
+.date__arrow,
+.date__icon {
+    cursor: pointer;
+    margin-left: 4px;
+    color: #ADBFDF;
+}
+
+.date__arrow:hover,
+.date__icon:hover {
+    color: #002CFB;
+}
+
+.date__arrow:active,
+.date__icon:active {
+    color: #274BC8;
+}
+
+.date__choose {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 204px;
+    height: 239px;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid #EAF0FA;
+    background: #FFF;
+    box-shadow: 0px 0px 26px 0px rgba(233, 237, 243, 0.80);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.choose {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.choose__item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 0 6px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.input__text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0 0 20px;
+    align-items: baseline;
+}
+
+.input__text p {
+    color: #122945;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.choose__item:hover {
+    background: #dee4fe;
+}
+
+.choose__item p {
+    opacity: 1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    line-height: 26px;
+    color: #899CB1;
+}
+
+.choose__item:hover p {
+    color: #122945;
+}
+
+.choose__item p:active {
+    color: #002CFB;
+}
+
+.input {
+    color: #ADBFDF;
+    max-width: 116px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.56px;
+}
+
+.input .date__icon {
+    width: 16px;
+    height: auto;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 26px;
+    border: none;
+    color: #ADBFDF;
+    border-radius: 4px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.inputContainer .calendarIcon {
+    width: 16px;
+    margin-right: 21px;
+    cursor: pointer;
+}
+
+.inputContainer .calendarIcon:hover {
+    color: #002CFB;
+}
+
+.inputContainer .calendarIcon:active {
+    color: #274BC8;
+}

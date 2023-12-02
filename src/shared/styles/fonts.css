@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'SF Pro Display Medium';
+    src: url('../assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    src: url('../assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+p {
+    font-family: 'SF Pro Display Regular', sans-serif;
+    font-weight: 400;
+}
+
+span.medium {
+    font-family: 'SF Pro Display Medium', sans-serif;
+    font-weight: 500;
+}

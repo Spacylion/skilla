@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "lib": [
+      "decorators",
+      "dom",
+      "es5",
+      "es2015.promise"
+    ],
+    "jsx": "react"
+  },
+  "jsx": "react",
+  "allowSyntheticDefaultImports": true
+}

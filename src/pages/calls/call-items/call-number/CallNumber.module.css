@@ -1,0 +1,25 @@
+
+.title__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.title__item p {
+    color: #899CB1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: start;
+}
+
+.phone__icon {
+    opacity: 0;
+    color: #ADBFDF;
+}
+
+.active {
+    opacity: 1;
+}

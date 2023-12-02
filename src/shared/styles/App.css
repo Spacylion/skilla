@@ -1,0 +1,22 @@
+
+body {
+    background: #F1F4F9;
+    margin: 0;
+
+}
+
+.app-wrapper {
+    display: flex;
+}
+
+.app-wrapper-content {
+    flex: 1;
+
+}
+
+.container__ui {
+    min-width: 240px;
+    height: 100vh;
+    background-color: #091336;
+
+}
