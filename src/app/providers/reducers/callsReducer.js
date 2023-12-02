@@ -2,7 +2,7 @@
 import {FETCH_CALLS_FAILURE, FETCH_CALLS_REQUEST, FETCH_CALLS_SUCCESS} from "@/app/providers/actions/actions.js";
 import {getCallsListAPI} from "@/shared/api/callsAPI";
 import {calculateDates, calculateEndDate, calculateStartDate} from "@/app/providers/actions/dateUtils.js";
-
+import {fetchRecord} from "@/app/providers/reducers/recordReducer.js";
 
 const initialStartDate = calculateStartDate();
 const initialEndDate = calculateEndDate();
@@ -11,7 +11,6 @@ export const initialState = {
     calls: [],
     error: null,
     loading: false,
-    in_out: 0,
     limit: 100,
 };
 
@@ -37,12 +36,12 @@ export const callsReducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload,
             };
-
-
         default:
             return state;
     }
 };
+
+//AC
 export const fetchCallsRequest = () => ({
     type: FETCH_CALLS_REQUEST,
 });
@@ -57,29 +56,22 @@ export const fetchCallsFailure = (error) => ({
     payload: error,
 });
 
-
+//thunk Creators
 export const fetchCalls = () => async (dispatch, getState) => {
     try {
         const {limit} = getState().callsPage;
-        const in_out = getState().callTypeFilter;
-
-        // Преобразование дат в нужный формат
+        const in_out = getState().callTypeFilter.in_out;
         const {date_start, date_end} = calculateDates(getState().callIntervalFilter.selectedInterval);
-
-        // Создание новых объектов Date
         const formattedStartDate = new Date(date_start);
         const formattedEndDate = new Date(date_end);
-
-        console.log('Request start date:', formattedStartDate);
-        console.log('Request end date:', formattedEndDate);
-        console.log('Request in_out:', in_out);
-        console.log('Request limit:', limit);
-
         const response = await getCallsListAPI.getCalls(formattedStartDate, formattedEndDate, in_out, limit);
         console.log('Response from server:', response);
+        dispatch(fetchCallsSuccess(response)); // Диспатчим успешный результат
 
-        dispatch(fetchCallsSuccess(response));
-        console.log('Request params:', {date_start, date_end, in_out, limit});
+        // Получаем данные из callsPage.calls.results и диспатчим их в fetchRecord
+        const calls = getState().callsPage.calls.results;
+        const recordIds = calls.map(call => call.id); // Предполагая, что вам нужны именно id записей
+        await dispatch(fetchRecord(recordIds)); // Вызываем fetchRecord с полученными id записей
     } catch (error) {
         dispatch(fetchCallsFailure(error.message));
     }

@@ -1,41 +1,63 @@
-import {FETCH_RECORD} from '../actions/actions.js';
-import {getRecordAPI} from "@/shared/api/recordAPI.ts";
+import {FETCH_RECORD_FAILURE, FETCH_RECORD_REQUEST, FETCH_RECORD_SUCCESS} from "@/app/providers/actions/actions.js";
 
-let initialState = {
-    record: "",
-    partnership_id: "",
+const initialState = {
+    recordUrls: [], // Изменяем запись на массив
+    loading: false,
+    error: null,
 };
 
 export const recordReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_RECORD:
+        case FETCH_RECORD_REQUEST:
             return {
                 ...state,
-                record: action.payload.record,
-                partnership_id: action.payload.partnership_id,
+                loading: true,
                 error: null,
+            };
+        case FETCH_RECORD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                recordUrls: action.payload.recordUrls,
+            };
+        case FETCH_RECORD_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
             };
         default:
             return state;
     }
 };
-// actionsCreators
-const fetchRecordAC = (record, partnership_id) => ({
-    type: FETCH_RECORD,
-    payload: {record, partnership_id}
+
+export default recordReducer;
+
+// AC
+export const fetchRecordRequest = () => ({
+    type: FETCH_RECORD_REQUEST,
 });
 
-// thunks creators
-export const getRecord = (record, partnership_id) => {
-    return async (dispatch) => {
-        try {
-            const results = await getRecordAPI(record, partnership_id);
-            dispatch(fetchRecordAC(results));
-        } catch (error) {
-            dispatch({
-                type: 'FETCH_RECORD_FAILURE',
-                payload: error.message
-            });
-        }
-    };
+export const fetchRecordSuccess = (recordUrls) => ({
+    type: FETCH_RECORD_SUCCESS,
+    payload: {
+        recordUrls,
+    },
+});
+
+export const fetchRecordFailure = (error) => ({
+    type: FETCH_RECORD_FAILURE,
+    payload: error,
+});
+
+// thunks creator
+export const fetchRecord = () => async (dispatch, getState) => {
+    dispatch(fetchRecordRequest());
+    try {
+        const calls = getState().callsPage.calls.results;
+        const recordUrls = calls.map(call => call.record);
+        dispatch(fetchRecordSuccess(recordUrls));
+    } catch (error) {
+        dispatch(fetchRecordFailure(error.message));
+    }
 };

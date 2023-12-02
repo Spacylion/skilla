@@ -1,7 +1,7 @@
 import React from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const BorderLinearProgress = ({ value, color }) => {
+const BorderLinearProgress = ({value, color}) => {
     const linearStyles = {
         height: 6,
         borderRadius: 5,
@@ -10,7 +10,7 @@ const BorderLinearProgress = ({ value, color }) => {
 
     const barStyles = {
         borderRadius: 5,
-        backgroundColor: color || '#1a90ff', // Default color or provided color
+        backgroundColor: color || '#1a90ff',
     };
 
     return (

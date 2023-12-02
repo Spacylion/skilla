@@ -9,7 +9,7 @@ import CallSource from "./call-source/CallSource.jsx";
 import CallTime from "./call-time/CallTime.jsx";
 import CallRate from "./call-rate/CallRate.jsx";
 
-const CallItem = ({call}) => {
+const CallItem = ({call, handleRecordFetch}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -22,29 +22,7 @@ const CallItem = ({call}) => {
 
     return (
         <div>
-            <div className={s.filter__title}>
-                <div className={s.filter__item}>
-                    <p>Тип</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Время</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Сотрудник</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Звонок</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Источник</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Оценка</p>
-                </div>
-                <div className={s.filter__item}>
-                    <p>Длительность</p>
-                </div>
-            </div>
+
             <div key={call.id}>
                 <div className={s.border}></div>
                 <div className={s.title} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -54,7 +32,7 @@ const CallItem = ({call}) => {
                     <CallNumber call={call}/>
                     <CallSource call={call}/>
                     <CallRate call={call}/>
-                    <CallRecord call={call}/>
+                    <CallRecord call={call} handleRecordFetch={handleRecordFetch}/>
                     <CallTime call={call}/>
                 </div>
             </div>

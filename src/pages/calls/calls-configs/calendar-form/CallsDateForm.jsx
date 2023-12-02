@@ -24,7 +24,6 @@ const CallsDateForm = ({
 
     const handleInputChange = (e) => {
         setEnteredDate(e.target.value);
-        // Добавьте здесь логику для обработки изменения введенной даты
     };
 
     return (

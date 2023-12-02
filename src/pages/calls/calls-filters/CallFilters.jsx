@@ -5,18 +5,13 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
-const CallsFilters = ({ calls, record, handleTypeSelect }) => {
+const CallsFilters = ({calls, record, handleTypeSelect, selectedType}) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [selectedType, setSelectedType] = useState(''); // State to store selected call type
 
     const handleToggleMenu = () => {
         setShowMenu(!showMenu);
     };
 
-    const handleTypeFilter = (type) => {
-        setSelectedType(type);
-        handleTypeSelect(type); // Pass selected type to the handler in the parent component
-    };
     return (
         <div className={s.wrapper}>
             <div className={s.content}>
@@ -33,24 +28,25 @@ const CallsFilters = ({ calls, record, handleTypeSelect }) => {
                         <div className={s.filter_section}>
                             <div className={s.filter__type}>
                                 <div className={s.filter} onClick={handleToggleMenu}>
-                                    <p>Все типы</p>
+                                    <p>{selectedType || 'Все типы'}</p>
 
-                                    {showMenu ? (
-                                        <ExpandLessRoundedIcon className={`${s.expand} ${s.icon}`}/>
-                                    ) : (
-                                        <ExpandMoreRoundedIcon className={`${s.extand} ${s.icon}`}/>
-                                    )}
+                                    {showMenu
+                                        ? (<ExpandLessRoundedIcon className={`${s.expand} ${s.icon}`}/>)
+                                        : (<ExpandMoreRoundedIcon className={`${s.extand} ${s.icon}`}/>)}
                                 </div>
                                 {showMenu && (
                                     <div className={s.type__menu}>
                                         <div className={s.choose}>
-                                            <div className={s.choose__item} onClick={() => handleTypeFilter('Все типы')}>
+                                            <div className={s.choose__item}
+                                                 onClick={() => handleTypeSelect('Все типы')}>
                                                 <p>Все типы</p>
                                             </div>
-                                            <div className={s.choose__item} onClick={() => handleTypeFilter('Исходящие')}>
+                                            <div className={s.choose__item}
+                                                 onClick={() => handleTypeSelect('Исходящие')}>
                                                 <p>Исходящие</p>
                                             </div>
-                                            <div className={s.choose__item} onClick={() => handleTypeFilter('Входящие')}>
+                                            <div className={s.choose__item}
+                                                 onClick={() => handleTypeSelect('Входящие')}>
                                                 <p>Входящие</p>
                                             </div>
                                         </div>

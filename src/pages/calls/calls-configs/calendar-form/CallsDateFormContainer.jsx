@@ -2,13 +2,13 @@
 import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux';
 import CallsDateForm from "./CallsDateForm";
-import {setTimeInterval} from "../../../../app/providers/reducers/timeIntervalReducer.js";
+import {setTimeInterval} from "@/app/providers/reducers/timeIntervalReducer.js";
 import {
     calculateDates,
     formatDateRange,
     getNextInterval,
     getPreviousInterval
-} from "../../../../app/providers/actions/dateUtils.js";
+} from "@/app/providers/actions/dateUtils.js";
 
 
 const CallsDateFormContainer = ({
@@ -45,7 +45,7 @@ const CallsDateFormContainer = ({
             handleNextInterval={handleNextInterval}
             handlePreviousInterval={handlePreviousInterval}
             selectedInterval={selectedInterval}
-            dateRange={formattedDateRange} // Обновлено использование formattedDateRange
+            dateRange={formattedDateRange}
         />
     );
 };
