@@ -235,9 +235,6 @@ button span {
 .title:hover {
     background: #f8fafd;
     transition-duration: 0.3s;
-}
-
-.title:hover {
     opacity: 1;
 }
 
@@ -257,3 +254,4 @@ button span {
     line-height: 100%;
     text-align: start;
 }
+

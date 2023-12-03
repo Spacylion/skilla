@@ -1,8 +1,10 @@
 
 .title__item {
     display: flex;
-    align-items: center;
     gap: 10px;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
 }
 
 .title__item p {
@@ -11,5 +13,5 @@
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
-    text-align: start;
+
 }

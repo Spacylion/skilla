@@ -129,3 +129,10 @@ export const formatDateRange = (date_start, date_end) => {
     const formattedEndDate = formatDate(date_end);
     return `${formattedStartDate}-${formattedEndDate}`;
 };
+
+// преобразователь времени в формат минуты:секунды
+export const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+};
