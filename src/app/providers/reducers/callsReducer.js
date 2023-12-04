@@ -66,12 +66,10 @@ export const fetchCalls = () => async (dispatch, getState) => {
         const formattedEndDate = new Date(date_end);
         const response = await getCallsListAPI.getCalls(formattedStartDate, formattedEndDate, in_out, limit);
         console.log('Response from server:', response);
-        dispatch(fetchCallsSuccess(response)); // Диспатчим успешный результат
-
-        // Получаем данные из callsPage.calls.results и диспатчим их в fetchRecord
+        dispatch(fetchCallsSuccess(response));
         const calls = getState().callsPage.calls.results;
-        const recordIds = calls.map(call => call.id); // Предполагая, что вам нужны именно id записей
-        await dispatch(fetchRecord(recordIds)); // Вызываем fetchRecord с полученными id записей
+        const recordIds = calls.map(call => call.id);
+        await dispatch(fetchRecord(recordIds));
     } catch (error) {
         dispatch(fetchCallsFailure(error.message));
     }

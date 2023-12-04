@@ -1,7 +1,7 @@
 import {FETCH_RECORD_FAILURE, FETCH_RECORD_REQUEST, FETCH_RECORD_SUCCESS} from "@/app/providers/actions/actions.js";
 
 const initialState = {
-    recordUrls: [], // Изменяем запись на массив
+    recordUrls: [],
     loading: false,
     error: null,
 };
