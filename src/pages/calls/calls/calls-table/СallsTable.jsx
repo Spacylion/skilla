@@ -71,7 +71,7 @@ const CallsTable = ({
     const [selectedItems, setSelectedItems] = useState([]);
     const [hoveredRow, setHoveredRow] = useState(null);
     const [sortedCalls, setSortedCalls] = useState([...calls]);
-    const [sortDirection, setSortDirection] = useState('asc'); // Define sortDirection here
+    const [sortDirection, setSortDirection] = useState('asc');
 
     const handleSelectAll = () => {
         const allIds = calls.map(call => call.id);
@@ -101,7 +101,6 @@ const CallsTable = ({
         setSortDirection(direction);
         setSelectedItems([]);
         setSortedCalls(sorted);
-        console.log(sorted)
     };
 
     useEffect(() => {

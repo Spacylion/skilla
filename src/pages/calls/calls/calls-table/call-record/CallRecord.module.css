@@ -1,9 +1,25 @@
+
+.wrapper {
+    margin-right: 40px;
+    height: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.showRecord {
+    width: 352px;
+    margin-right: 0;
+}
+
 .record {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 12px 6px;
     background: #EAF0FA;
     border-radius: 48px;
 }
@@ -14,42 +30,55 @@
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 145%;
+    line-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.play, .pause {
-    opacity: 1;
-}
-
-.play:hover, .pause:hover {
-    opacity: 0.25;
-}
-
-.play, .pause, .close {
+.play,
+.pause {
     width: 24px;
     height: 24px;
-
     fill: #ADBFDF;
     cursor: pointer;
+    margin: 0 6px;
 }
 
 .download {
     width: 13px;
     height: 16px;
     opacity: 0.25;
+    margin: 0 6px;
 }
+
+.close {
+    opacity: 0.25;
+    margin-right: 6px;
+}
+
+.play:hover,
+.pause:hover {
+    opacity: 0.25;
+}
+
+.play.active,
+.pause.active {
+    opacity: 1;
+}
+
 
 .close {
     opacity: 0.25;
 }
 
-.download:hover, .close:hover {
+.download:hover,
+.close:hover {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
 
 .record img:hover {
-    fill: #002CFB
+    fill: #002CFB;
 }
 
 .progress {

@@ -26,34 +26,35 @@ const CallRecord = ({
             : s.wrapper}>
             <div className={s.wrapper}>
                 {isHovered && recordUrls
-                    ? (<div className={s.record}>
-                        <CallDuration call={call}/>
-                        <img
-                            src={isPlaying && selectedRecordIndex === index ? Pause : Play}
-                            className={`${s.play} ${s.active}`}
-                            alt="play"
-                            onClick={() => togglePlay(index)}
-                        />
-                        <div className={`${s.progress} ${s.complete}`}></div>
-                        <img
-                            src={Download}
-                            className={`${s.download} ${s.active}`}
-                            alt="download"
-                        />
-                        <img
-                            src={Close}
-                            className={`${s.close} ${s.active}`}
-                            alt="download"
-                        />
-                        <audio
-                            ref={audioRef}
-                            controls={false}
-                            onLoadedData={handleLoadedData}
-                            onEnded={handleEnded}
-                        >
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>)
+                    ? (
+                        <div className={s.record}>
+                            <CallDuration call={call}/>
+                            <img
+                                src={isPlaying && selectedRecordIndex === index ? Pause : Play}
+                                className={`${s.play} ${s.active}`}
+                                alt="play"
+                                onClick={() => togglePlay(index)}
+                            />
+                            <div className={`${s.progress} ${s.complete}`}></div>
+                            <img
+                                src={Download}
+                                className={`${s.download} ${s.active}`}
+                                alt="download"
+                            />
+                            <img
+                                src={Close}
+                                className={`${s.close} ${s.active}`}
+                                alt="download"
+                            />
+                            <audio
+                                ref={audioRef}
+                                controls={false}
+                                onLoadedData={handleLoadedData}
+                                onEnded={handleEnded}
+                            >
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>)
                     : <CallDuration call={call}/>}
             </div>
         </div>
