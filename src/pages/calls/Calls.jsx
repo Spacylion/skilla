@@ -1,8 +1,8 @@
 import React, {useRef, useState} from "react";
 import s from './Calls.module.css';
-import CallsTable from "../../entities/calls/calls-table/СallsTable.jsx";
-import CallsConfigs from "../../entities/calls/calls-configs/CallsConfigs.jsx";
-import CallsFilters from "../../entities/calls/calls-filters/CallFilters.jsx";
+import CallsTable from "./calls/calls-table/СallsTable.jsx";
+import CallsFilters from "./calls/calls-filters/CallFilters.jsx";
+import CallsConfigs from "./calls/calls-configs/CallsConfigs.jsx";
 
 const Calls = ({calls, handleTypeSelect, selectedType, recordUrls}) => {
     const audioRef = useRef(null);
@@ -29,7 +29,6 @@ const Calls = ({calls, handleTypeSelect, selectedType, recordUrls}) => {
     const handleLoadedData = () => {
         setIsLoading(false);
     };
-
     const handleEnded = () => {
         setIsPlaying(false);
     };

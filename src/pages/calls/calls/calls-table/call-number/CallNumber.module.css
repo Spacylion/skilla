@@ -1,0 +1,41 @@
+.title__item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.icon__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.title__item p {
+    color: #899CB1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.active {
+    opacity: 1;
+}
+
+.phone__icon {
+    position: absolute;
+    opacity: 1;
+    color: #ADBFDF;
+    right: 6px;
+    width: 22px;
+}
+
+.web__icon {
+    position: absolute;
+    opacity: 1;
+    color: #ADBFDF;
+    right: 34px;
+    width: 22px;
+}

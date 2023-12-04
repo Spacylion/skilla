@@ -1,7 +1,7 @@
 // callsReducer.js
 import {FETCH_CALLS_FAILURE, FETCH_CALLS_REQUEST, FETCH_CALLS_SUCCESS} from "@/app/providers/actions/actions.js";
 import {getCallsListAPI} from "@/shared/api/callsAPI";
-import {calculateDates, calculateEndDate, calculateStartDate} from "@/app/providers/actions/dateUtils.js";
+import {calculateDates, calculateEndDate, calculateStartDate} from "@/features/date-utils/dateUtils.js";
 import {fetchRecord} from "@/app/providers/reducers/recordReducer.js";
 
 const initialStartDate = calculateStartDate();

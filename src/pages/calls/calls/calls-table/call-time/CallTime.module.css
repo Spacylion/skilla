@@ -1,0 +1,17 @@
+
+.time__container {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: start;
+
+}
+
+.time__container p {
+    color: #899CB1;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+
+}

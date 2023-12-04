@@ -1,5 +1,5 @@
 import {SET_TIME_INTERVAL, UPDATE_CALLS_DATES} from "@/app/providers/actions/actions.js";
-import {calculateDates, calculateEndDate, calculateStartDate} from "@/app/providers/actions/dateUtils.js";
+import {calculateDates, calculateEndDate, calculateStartDate} from "@/features/date-utils/dateUtils.js";
 
 const initialState = {
     interval: '3 Дня',
